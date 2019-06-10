@@ -11,8 +11,9 @@ const store=(function(){
   const hideItemsChecked= false;
   const searchTerm='';
   const findById = function(id){
-    store.items.find(itemId => itemId === id)
-  }
+    console.log('ID Finder Ran')
+    return store.items.find(item => item.id === id);
+  };
   const addItem = function(name){
     try {
       Item.validateName(name);
@@ -21,18 +22,20 @@ const store=(function(){
     catch(e){
       console.log('Cannot update name:' + e.message)
     }
-  }
+  };
   const findAndToggleChecked = function(id){
-    this.findById(id)
+   const itemId= this.findById(id)
     console.log('findToggle ran')
-    this.checked = !this.checked  
+    return itemId.checked = !itemId.checked;  
 
-  }
+  };
   const findAndUpdateName = function(id, newName){
     try {
       Item.validateName(newName);
-      findById(id);
-      this.name = newName;
+     const itemId= this.findById(id);
+      console.log(findById(id));
+      return itemId.name = newName;
+     
 
     }
     catch(e){
