@@ -4,7 +4,7 @@
 // eslint-disable-next-line no-unused-vars
 
 function main() {
-  shoppingList.bindEventListeners();
+  shoppingList.bindEventListeners();  
   shoppingList.render();
 }
 
