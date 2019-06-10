@@ -34,8 +34,7 @@ const store=(function(){
       Item.validateName(newName);
      const itemId= this.findById(id);
       console.log(findById(id));
-      return itemId.name = newName;
-     
+      return itemId.name = newName;    
 
     }
     catch(e){
@@ -45,6 +44,14 @@ const store=(function(){
   const findAndDelete = function(id){
     const itemIndex = this.items.findIndex(item => item.id === id);    
     return this.items.splice(itemIndex, 1);   
+  }
+
+  const toggleCheckedFilter = function(){
+    this.hideCheckedItem = !this.hideCheckedItem;
+  }
+
+  const setSearchTerm = function(val){
+    this.searchTerm = val;    
   }
 
   
